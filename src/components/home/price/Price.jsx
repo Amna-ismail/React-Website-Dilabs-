@@ -8,7 +8,18 @@ const Price = () => {
     <>
       <section className='price padding'>
         <div className='container'>
-          <Heading title='Select Your Package' subtitle='At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores' />
+        <Heading 
+            title={
+              <span style={{ color: '#000', fontWeight: 'bold' }}>
+                Check out our blog posts
+              </span>
+            }
+            subtitle={
+              <span style={{ color: '#483ad3', fontSize: '18px', fontWeight: '600' }}>
+                News & Events
+              </span>
+            }
+          />
           <PriceCard />
         </div>
       </section>

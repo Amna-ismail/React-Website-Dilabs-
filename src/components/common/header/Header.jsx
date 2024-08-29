@@ -5,54 +5,14 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   const [navList, setNavList] = useState(false);
-  const [showSignIn, setShowSignIn] = useState(false); // State for sign-in form visibility
-  const [isSignUp, setIsSignUp] = useState(false); // State to toggle between sign-in and sign-up forms
-
-  const handleSignInClick = () => {
-    setShowSignIn(!showSignIn);
-    setIsSignUp(false); // Reset to sign-in form when modal opens
-  };
-
-  const toggleForm = () => {
-    setIsSignUp(!isSignUp); // Toggle between sign-in and sign-up forms
-  };
-
-  const handleFormSubmit = async (event) => {
-    event.preventDefault();
-    const email = event.target.email.value;
-    const password = event.target.password.value;
-
-    const url = isSignUp ? 'http://localhost:5000/api/users/signup' : 'http://localhost:5000/api/users/signin';
-
-
-    try {
-      const response = await fetch(url, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, password })
-      });
-      const data = await response.json();
-
-      if (response.ok) {
-        alert(data.message || 'Success');
-        if (!isSignUp) {
-          localStorage.setItem('token', data.token); // Save JWT token if sign-in
-        }
-        setShowSignIn(false);
-      } else {
-        alert(`Error: ${data.message || 'An error occurred'}`);
-      }
-    } catch (err) {
-      alert(`Fetch error: ${err.message}`);
-    }
-  };
+  const [searchVisible, setSearchVisible] = useState(false);
 
   return (
     <>
       <header>
         <div className='container flex'>
           <div className='logo'>
-            <img src='./images/logo.png' alt='' />
+            <img src='./images/logo.png' alt='logo' />
           </div>
           <div className='nav'>
             <ul className={navList ? "small" : "flex"}>
@@ -63,58 +23,29 @@ const Header = () => {
               ))}
             </ul>
           </div>
-          <div className='button flex'>
-           
-            <button className='btn1' onClick={handleSignInClick}>
-              <i className='fa fa-sign-out'></i> {isSignUp ? "Sign Up" : "Login"}
-            </button>
-          </div>
+          <div className='icons flex'>
+            {/* Magnifying Glass Icon */}
+            <i
+              className='fa fa-search icon-btn'
+              style={{ fontSize: "20px",  margin: "0 18px" }} 
+              onClick={() => setSearchVisible(!searchVisible)}
+            ></i>
 
-          <div className='toggle'>
-            <button onClick={() => setNavList(!navList)}>
-              {navList ? <i className='fa fa-times'></i> : <i className='fa fa-bars'></i>}
-            </button>
+            {/* Search Input Field */}
+            {searchVisible && (
+              <input type='text' className='search-input' placeholder='Search...' />
+            )}
+
+
+            {/* Hamburger Menu Icon */}
+            <i
+              className={navList ? 'fa fa-times icon-btn' : 'fa fa-bars icon-btn'}
+              style={{ fontSize: "20px" }} 
+              onClick={() => setNavList(!navList)}
+            ></i>
           </div>
         </div>
       </header>
-
-      {/* Sign In/Sign Up Form */}
-      {showSignIn && (
-        <div className='sign-in-form'>
-          <div className='form-container'>
-            <button className='close-btn' onClick={handleSignInClick}>
-              <i className='fa fa-times'></i>
-            </button>
-            <h2>{isSignUp ? "Sign Up" : "Sign In"}</h2>
-            <form onSubmit={handleFormSubmit}>
-              <label>Email:</label>
-              <input type='email' name='email' required />
-              <label>Password:</label>
-              <input type='password' name='password' required />
-              <button type='submit' className='submit-btn'>
-                {isSignUp ? "Sign Up" : "Sign In"}
-              </button>
-            </form>
-            <p>
-              {isSignUp ? (
-                <>
-                  Already have an account?{" "}
-                  <button className='link-btn' onClick={toggleForm}>
-                    Sign In
-                  </button>
-                </>
-              ) : (
-                <>
-                  Don't have an account?{" "}
-                  <button className='link-btn' onClick={toggleForm}>
-                    Sign Up
-                  </button>
-                </>
-              )}
-            </p>
-          </div>
-        </div>
-      )}
     </>
   );
 };

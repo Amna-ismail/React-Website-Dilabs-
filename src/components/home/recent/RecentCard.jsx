@@ -1,36 +1,39 @@
 import React from "react"
-import { list } from "../../data/Data"
+import "./recent.css" // Include the CSS file for additional styles
 
 const RecentCard = () => {
   return (
     <>
       <div className='content grid3 mtop'>
-        {list.map((val, index) => {
-          const { cover, category, location, name, price, type } = val
-          return (
-            <div className='box shadow' key={index}>
-              <div className='img'>
-                <img src={cover} alt='' />
+        {/* Existing card */}
+        <div className='box shadow dark-blue-bg'>
+          <div className='text'>
+            <div className='item'>
+              <div className='icon'>
+                <i className='fa fa-check'></i> {/* Checkmark icon */}
               </div>
-              <div className='text'>
-                <div className='category flex'>
-                  <span style={{ background: category === "For Sale" ? "#25b5791a" : "#ff98001a", color: category === "For Sale" ? "#25b579" : "#ff9800" }}>{category}</span>
-                  <i className='fa fa-heart'></i>
-                </div>
-                <h4>{name}</h4>
-                <p>
-                  <i className='fa fa-location-dot'></i> {location}
-                </p>
-              </div>
-              <div className='button flex'>
-                <div>
-                  <button className='btn2'>{price}</button> <label htmlFor=''>/sqft</label>
-                </div>
-                <span>{type}</span>
+              <div className='details'>
+                <h5>Professional Agency</h5>
+                <p>Consectetur adipisci velitsed quia non numquam eius tempralabore et dolore magnam aliquam quaerat</p>
               </div>
             </div>
-          )
-        })}
+            <hr /> {/* Line between the two sections */}
+            <div className='item'>
+              <div className='icon'>
+                <i className='fa fa-check'></i> {/* Checkmark icon */}
+              </div>
+              <div className='details'>
+                <h5>Solutions Provider</h5>
+                <p>Know more about digital direct response than virtually any digital marketing agency in the industry.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* New card with image */}
+        <div className='box shadow image-card'>
+          <img src='./images/download.jpg' alt='Cover' className='card-image' />
+        </div>
       </div>
     </>
   )

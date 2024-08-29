@@ -1,0 +1,58 @@
+
+  .people {
+    padding: 170px 0;
+    background-color: #1a4cde;
+    color: #fff;
+    text-align: center;
+  }
+  
+  .heading-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .review-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .nav-button {
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #fff;
+    margin: 0 20px;
+  }
+  
+  .review-content {
+    text-align: left;
+  }
+  
+  .counter {
+    font-size: 20px;
+    color: #fff;
+  }
+  
+  .separator {
+    border: 1px solid #fff;
+    margin: 10px 0;
+  }
+  
+  .review-text p {
+    color: #fff;
+    font-size: 18px;
+
+    line-height: 2.2; /* Adjust this value as needed */
+    margin-bottom: 20px; /* Adds spacing between paragraphs, if any */
+
+  }
+  
+  .reviewer-name span {
+    color: #fff;
+    font-size: 18px;
+  }
+  

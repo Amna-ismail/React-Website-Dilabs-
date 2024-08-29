@@ -1,3 +1,9 @@
+.location {
+  text-align: left;
+  background-color: #c3e3e0; /* Light blue background */
+  padding: 100px 0;
+}
+
 .location .box {
   position: relative;
   border-radius: 5px;
@@ -7,8 +13,8 @@
 }
 .location .overlay {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 170px;
+  left: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -45,3 +51,179 @@
     height: 170px;
   }
 }
+
+
+.heading-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+}
+
+.circle {
+  width: 50px;
+  height: 50px;
+  background-color: #3c82c4; /* Blue background */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:  #fff; /* White arrow */
+  position: relative;
+}
+.arrow {
+  font-size: 40px; /* Adjusted font size for better alignment */
+  line-height: 300px; /* Reset line-height to avoid vertical alignment issues */
+}
+
+.line {
+  width: 50px;
+  height: 2px;
+  background-color: #3c82c4; /* Blue line */
+  margin: 0 10px;
+}
+
+
+
+.controls .circle {
+  width: 50px;
+  height: 50px;
+  background-color: #483ad3; /* Blue background */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff; /* White arrow */
+  cursor: pointer; /* Change cursor to pointer (hand icon) */
+  transition: transform 0.2s ease; /* Add a smooth transition for the hover effect */
+}
+
+.controls .circle:hover {
+  transform: translateY(-2px); /* Slight upward movement on hover */
+}
+
+
+
+/* Custom styles for the new card */
+.custom-card {
+  background-color: #9143d5; /* Custom background color for this card */
+  color: #ffffff; /* Custom text color */
+  padding: 80px;
+  border-radius: 10px;
+  width: 500px; /* Set desired width */
+  margin-right: 80px; /* Space between the card and the text section */
+}
+.custom-card .text h5 {
+  font-size: 50px; /* Custom font size for the heading */
+  font-weight: bold;
+  color: #ffffff; /* Custom heading color */
+  margin: 0; /* Remove default margin */
+
+}
+
+.custom-card .text p {
+  font-size: 16px; /* Custom font size for the paragraph */
+  color: #ffffff; /* Custom paragraph color */
+  margin: 0; /* Remove default margin */
+}
+
+.custom-card .icon img {
+  width: 90px; /* Custom size for the icon image */
+  height: 90px;
+  object-fit: contain;
+}
+
+.custom-card hr {
+  border: 0;
+  height: 1px;
+  background-color: #ffffff; /* Custom color for the horizontal line */
+  margin: 25px 0;
+}
+
+.custom-card:hover {
+  background-color: #9143d5; /* Custom hover background color */
+  transform: translateY(-5px); /* Slight lift effect on hover */
+
+}
+
+
+
+.custom-card .text .item {
+  display: flex;
+  align-items: center; /* Aligns items vertically in the center */
+  margin-bottom: 20px; /* Adds space between items */
+}
+
+.custom-card .text .icon {
+  margin-right: 50px; /* Adds space between the icon and the text */
+}
+
+
+.custom-container {
+  display: flex;
+  align-items: center; /* Align items vertically in the center */
+  justify-content: space-between; /* Space between custom card and text section */
+  margin-top: 20px; /* Space between the grid items and the new section */
+}
+
+
+
+.intro-text {
+  max-width: 600px; /* Adjust width to fit your design */
+  padding: 20px;
+}
+
+
+/* Intro text adjustments */
+.intro-text h2 {
+  font-size: 40px;
+  font-weight: bold;
+  color: #161616;
+  margin-bottom: 20px;
+  white-space: nowrap; /* Prevent text from wrapping */
+  overflow: hidden; /* Hide overflow text */
+  text-overflow: ellipsis; /* Add ellipsis if text overflows */
+  margin-top: 20px;
+}
+
+.intro-text p {
+  font-size: 18px;
+  color: #696868;
+  margin-bottom: 20px;
+}
+
+
+.intro-text ul.checklist {
+  list-style: none; /* Remove default list styling */
+  padding: 0;
+}
+
+.intro-text ul.checklist li {
+  position: relative;
+  padding-left: 30px; /* Space for the checkmark */
+  margin-bottom: 10px; /* Space between items */
+  font-size: 18px;
+  color: #000000;
+}
+
+.intro-text ul.checklist li::before {
+  content: "\2714"; /* Unicode character for checkmark */
+  color: #000; /* Black color for the checkmark */
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%); /* Center vertically */
+  font-size: 20px; /* Adjust size of the checkmark */
+}
+
+
+
+
+
+
+
+

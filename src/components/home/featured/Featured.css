@@ -1,12 +1,40 @@
-.featured .box {
-  box-shadow: 0 0 20px 0 rgb(112 121 138 / 18%);
-  border-radius: 6px;
-  text-align: center;
-  padding: 30px;
-  cursor: pointer;
+.featured.background {
+  background-color: #c3e3e0; /* Blue background for the Featured section */
+  padding: 50px 0; /* Optional: Add some padding for spacing */
 }
+
+.featured .box {
+  background-color: white; /* White background for the feature boxes */
+  box-shadow: 0 0 20px 0 rgb(112 121 138 / 18%);
+  border-radius: 20px;
+  text-align: left;
+  padding: 40px;
+  cursor: pointer;
+  width: 400px; /* Set desired width */
+  height: 400px; /* Set desired height */
+  margin: 10px; /* Add margin to space out the boxes */
+  font-size: 1.5rem; /* Increase the font size of the text inside the box */
+}
+
+
+.featured .box p, .featured .box h1, .featured .box h2, .featured .box h3 {
+  font-size: 1rem; /* Adjust the font size for different text elements */
+  line-height: 1; /* Improve readability with appropriate line height */
+}
+
 .featured img {
-  width: 65px;
-  height: 65px;
+  width: 80px;
+  height: 80px;
   margin: auto;
 }
+
+.featured .container {
+  text-align: center;
+}
+
+
+
+
+
+
+

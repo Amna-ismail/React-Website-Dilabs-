@@ -7,43 +7,23 @@ const PriceCard = () => {
       <div className='content flex mtop'>
         {price.map((item, index) => (
           <div className='box shadow' key={index}>
-            <div className='topbtn'>
-              <button className='btn3'>{item.best}</button>
+          
+          <img src={item.image} alt={item.plan} /> {/* Image above the card */}
+           
+            <p style={{ marginBottom: '15px', color: '#757575'  }}>{item.ptext}</p>  
+            <h3 style={{ marginBottom: '10px' }}>{item.plan}</h3>
+            <div className='price-arrow'>
+              <h2 style={{ fontWeight: 'bold', display: 'inline' }}>
+                {item.price}
+              </h2>
+              <i
+                className='fa-solid fa-arrow-right'
+                style={{
+                  fontWeight: 'bold',
+                  marginLeft: '10px',
+                }}
+              ></i>
             </div>
-            <h3>{item.plan}</h3>
-            <h1>
-              <span>$</span>
-              {item.price}
-            </h1>
-            <p>{item.ptext}</p>
-
-            <ul>
-              {item.list.map((val) => {
-                const { icon, text, change } = val
-                return (
-                  <li>
-                    <label
-                      style={{
-                        background: change === "color" ? "#dc35451f" : "#27ae601f",
-                        color: change === "color" ? "#dc3848" : "#27ae60",
-                      }}
-                    >
-                      {icon}
-                    </label>
-                    <p>{text}</p>
-                  </li>
-                )
-              })}
-            </ul>
-            <button
-              className='btn5'
-              style={{
-                background: item.plan === "Standard" ? "#27ae60" : "#fff",
-                color: item.plan === "Standard" ? "#fff" : "#27ae60",
-              }}
-            >
-              Start {item.plan}
-            </button>
           </div>
         ))}
       </div>

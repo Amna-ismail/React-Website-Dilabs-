@@ -1,55 +1,110 @@
 .price {
-  text-align: center;
+  text-align: left;
+  background-color: #c3e3e0; /* Light blue background */
+  padding: 100px 0;
 }
+
+.price .content {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px; /* Gap between the boxes */
+  flex-wrap: wrap; /* Ensure boxes wrap on smaller screens */
+}
+
 .price .content .box {
   width: 31.5%;
   padding: 30px;
   border-radius: 10px;
+  background-color: #fff; /* This will be covered by the image */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  position: relative; /* Position for absolute positioning of text */
+  overflow: hidden; /* Ensure the content stays within the box */
+  height: 500px; /* Ensure all cards have the same height */
 }
-.price button {
-  margin-bottom: 20px;
-}
-.price .box:nth-child(1) .topbtn button,
-.price .box:nth-child(3) .topbtn button {
-  display: none;
-}
+
+
 .price h3 {
   font-size: 22px;
 }
-.price h1 {
-  font-size: 50px;
-}
-.price h1 span {
-  font-size: 30px;
-  font-weight: 500;
-}
-.price ul {
-  margin-top: 40px;
-}
-.price ul li {
-  display: flex;
-  margin-bottom: 20px;
-}
-.price label {
-  width: 30px;
-  height: 30px;
-  line-height: 30px;
-  border-radius: 50%;
-  margin-right: 20px;
+
+
+.price .content .box img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 20px; /* Gap between image and text */
+  top: 0;
+  left: 0;
+  height: 100%;
+  object-fit: cover;
+
+
 }
 
-.price .btn5 {
-  width: 100%;
+
+.price-arrow {
+  display: flex;
+  align-items: center;
+  font-size: 10px; /* Adjust size according to your design */
+  margin: 10px 0; /* Space around the price and arrow */
 }
-@media screen and (max-width: 800px) {
+
+
+
+
+
+
+
+/* Responsive Styles */
+@media screen and (max-width: 1024px) {
+  .price .content .box {
+    width: 48%; /* Adjust box width for medium screens */
+    height: auto; /* Let the height adjust automatically */
+  }
+
+  .price h3 {
+    font-size: 20px; /* Slightly reduce heading size */
+  }
+}
+
+@media screen and (max-width: 768px) {
   .price .content {
     flex-direction: column;
+    align-items: center;
   }
 
   .price .content .box {
-    width: 100%;
-    padding: 30px;
-    border-radius: 10px;
-    margin-bottom: 50px;
+    width: 100%; /* Full width for small screens */
+    margin-bottom: 20px; /* Add space between boxes */
+    height: auto; /* Let the height adjust automatically */
+  }
+
+  .price h3 {
+    font-size: 18px; /* Reduce heading size for small screens */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .price {
+    padding: 50px 20px; /* Reduce padding on small screens */
+  }
+
+  .price .content .box {
+    padding: 20px; /* Reduce padding inside the box */
+  }
+
+  .price .content .box img {
+    margin-bottom: 15px; /* Reduce margin between image and text */
+  }
+
+  .price h3 {
+    font-size: 16px; /* Further reduce heading size */
+  }
+
+  .price-arrow {
+    font-size: 8px; /* Adjust size according to your design */
   }
 }

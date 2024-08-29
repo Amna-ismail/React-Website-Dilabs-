@@ -1,65 +1,201 @@
 .hero {
-  background-image: url("../../../../public/images/banner.png");
+  background-image: url("../../../../public/images/Banner123.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   height: 90vh;
   width: 100%;
+  display: flex;
+  align-items: left;
+  justify-content: left;
+  position: relative;
+  
+  color: #050505;
+
 }
-.hero .container {
-  padding-top: 15%;
+
+.hero-content {
+  text-align: left;
+  max-width: 800px;
+  padding: 60px;
+
+  position: relative;
+  left: 10%; /* Moves the content slightly to the right */
+  line-height: 1.7; /* Reduces the gap between lines */
 }
-.hero h1 {
-  color: #fff;
-  font-size: 60px;
+
+.hero-title {
+  font-size: 110px;
+  margin-bottom: 30px;
+  font-weight: bold;
+  margin-top: 70px;
+  line-height: 1.1; /* Reduces the gap between lines */
+
 }
-.hero p {
-  color: #fff;
-  opacity: 0.8;
+
+
+.hero-title::after {
+  content: 'Solution';
+  display: inline-block;
+  margin-left: 90px; /* Adjust this value for the desired spacing */
 }
-form {
-  background-color: #fff;
-  border-radius: 5px;
-  margin-top: 50px;
-  padding: 0 20px;
+
+
+
+.hero-subtitle {
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: #554f4f;
+  margin-bottom: 35px;
+  
 }
-form input {
-  padding: 10px;
-  width: 100%;
-  border: 1px solid rgba(128, 128, 128, 0.2);
-  margin-top: 5px;
-  border-radius: 5px;
+
+
+.hero-button {
+  font-size: 18px;
+  padding: 20px 60px;
+  background-color: #483ad3;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
-form span {
-  font-size: 14px;
-  color: grey;
+
+.hero-button:hover {
+  background-color: #0056b3;
 }
-input::placeholder {
-  font-size: 17px;
-  color: black;
+
+
+
+.hero-images {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 8%;
+  gap: 40px; /* Adds a gap between the images */
+
 }
-form .box {
-  padding: 15px;
-  border-left: 1px solid rgba(128, 128, 128, 0.2);
+
+.small-image {
+  width: 50%; /* Small image width */
+  height: 40%;
+  margin-top: 60%; /* Spacing between the two images */
+  border-radius: 10px;
 }
-form .box:nth-child(1) {
-  border-left: none;
+
+.large-image {
+  width: 80%; /* Large image width */
+  height: 65%;
+  border-radius: 10px;
 }
-form h4 {
-  font-weight: 500;
-}
-@media screen and (max-width: 800px) {
-  .hero .container {
-    padding-top: 30%;
+
+
+
+
+
+
+
+
+
+@media (max-width: 1024px) {
+  .hero-title {
+    font-size: 80px;
   }
-  form {
-    display: flex;
-    flex-wrap: wrap;
+
+  .hero-title::after {
+    margin-left: 20px; /* Reduce spacing for smaller screens */
   }
-  form .box {
-    border-left: none;
+
+  .hero-subtitle {
+    font-size: 14px;
   }
-  form input {
+
+  .hero-button {
+    font-size: 16px;
+    padding: 15px 40px;
+  }
+
+  .hero-images {
+    flex-direction: column;
+    gap: 20px; /* Reduce gap for smaller screens */
+    margin-left: 0; /* Center the images */
+    margin-top: 40px;
+  }
+
+  .small-image {
+    width: 70%;
+    margin-top: 0;
+  }
+
+  .large-image {
+    width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: auto;
+    padding: 40px 20px;
+    text-align: center; /* Center text content for smaller screens */
+  }
+
+  .hero-content {
+    max-width: 100%;
+    padding: 20px;
+    left: 0;
+  }
+
+  .hero-title {
+    font-size: 60px;
+  }
+
+  .hero-title::after {
+    display: block;
+    margin-left: 0;
+    margin-top: 20px; /* Adjust for better spacing */
+  }
+
+  .hero-subtitle {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .hero-button {
+    font-size: 16px;
+    padding: 10px 30px;
+  }
+
+  .hero-images {
+    flex-direction: column;
+    margin-left: 0;
+    gap: 20px;
+  }
+
+  .small-image,
+  .large-image {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 40px;
+  }
+
+  .hero-subtitle {
+    font-size: 12px;
+  }
+
+  .hero-button {
+    font-size: 14px;
+    padding: 8px 20px;
+  }
+
+  .small-image,
+  .large-image {
     width: 100%;
   }
 }
+

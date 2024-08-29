@@ -1,21 +1,96 @@
 .recent .text {
-  padding: 30px;
+  padding: 50px;
 }
-.recent .category span {
-  padding: 4px 15px;
-  border-radius: 2px;
-  font-weight: 600;
-  font-size: 13px;
-  display: inline-block;
+
+
+/* Dark blue background for the card */
+.dark-blue-bg {
+  background-color: #1a1d2c; /* Dark blue color */
+  color: white; /* White text */
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+  width: 450px; /* Set desired width */
 }
-.recent .category i {
-  font-size: 20px;
-  color: #bec7d8;
+
+/* Style for the line between text elements */
+.text hr {
+  border: 0;
+  border-top: 1px solid #ffffff; /* White line */
+  margin: 30px 0; /* Increased spacing around the line */
 }
-.recent p {
-  color: #72809d;
+
+/* Container for each item with icon and details */
+.item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px; /* Spacing between items */
 }
-.recent .button {
-  border-top: 1px solid #e4e8f3;
-  padding: 10px 30px;
+
+/* Style for the icon */
+.icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #0056b3; /* Blue circle color */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px; /* Space between icon and text */
 }
+
+/* Style for the checkmark icon */
+.icon i {
+  color: white;
+  font-size: 16px; /* Adjust icon size as needed */
+}
+
+/* Details of each item */
+.details {
+  flex: 1;
+}
+
+/* Styling for the titles */
+.details h5 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+/* Styling for the subheadings */
+.details p {
+  margin: 3px 0 0 0; /* Margin to space text */
+}
+
+
+
+
+
+
+/* Style for the new card with image */
+.image-card {
+  background-color: transparent; /* No background color */
+  border: none; /* Remove border */
+  padding: 40; /* No padding */
+  text-align: center; /* Center the image */
+  display: inline-block; /* Adjust card size based on content */
+  border-radius: 10px; /* Optional: Rounded corners */
+}
+/* Style for the image inside the card */
+.card-image {
+  width: 180%; /* Full width of the card */
+  height: 70; /* Maintain aspect ratio */
+  border-radius: 10px; /* Optional: Rounded corners */
+  display: block; /* Ensure the image behaves like a block element */
+}
+
+
+
+
+/* Container for the cards to add space between them */
+.cards-container {
+  display: flex;
+  gap: 60px; /* Space between the cards */
+  margin-bottom: 20px; /* Space below the cards */
+}
+

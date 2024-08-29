@@ -1,42 +1,59 @@
-import React from "react"
-import Heading from "../../common/Heading"
-import { team } from "../../data/Data"
-import "./team.css"
+import React, { useState } from "react";
+import Heading from "../../common/Heading";
+import { team } from "../../data/Data";
+import "./team.css";
 
 const Team = () => {
+  const [selectedMember, setSelectedMember] = useState(null);
+
+  const handleReadMore = (index) => {
+    setSelectedMember(index === selectedMember ? null : index);
+  };
+
   return (
     <>
       <section className='team background'>
         <div className='container'>
-          <Heading title='Our Featured Agents' subtitle='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.' />
+          <Heading
+            title={
+              <span style={{ color: 'black' }}>
+                Our Professional
+                <br />
+                Expert Team Members
+              </span>
+            }
+            subtitle={
+              <span style={{ color: '#483ad3', fontSize: '18px', fontWeight: '600' }}>
+                TEAM MEMBERS
+              </span>
+            }
+          />
 
-          <div className='content mtop grid3'>
-            {team.map((val, index) => (
+          <div className='content mtop'>
+            {team.slice(0, 4).map((val, index) => (
               <div className='box' key={index}>
-                <button className='btn3'>{val.list} Listings</button>
-                <div className='details'>
+                <div className='details' style={{ textAlign: 'center' }}>
                   <div className='img'>
-                    <img src={val.cover} alt='' />
-                    <i className='fa-solid fa-circle-check'></i>
+                    <img src={val.cover} alt={val.name} />
                   </div>
-                  <i className='fa fa-location-dot'></i>
+
                   <label>{val.address}</label>
                   <h4>{val.name}</h4>
-
-                  <ul>
-                    {val.icon.map((icon, index) => (
-                      <li key={index}>{icon}</li>
-                    ))}
-                  </ul>
-                  <div className='button flex'>
-                    <button>
-                      <i className='fa fa-envelope'></i>
-                      Message
-                    </button>
-                    <button className='btn4'>
-                      <i className='fa fa-phone-alt'></i>
-                    </button>
-                  </div>
+                  {selectedMember === index && (
+                    <div className='more-info' style={{ marginBottom: '10px' }}>
+                      <p>{val.moreInfo}</p>
+                    </div>
+                  )}
+                  <button
+                    className='btn-read-more'
+                    onClick={() => handleReadMore(index)}
+                    style={{
+                      display: 'block',
+                      margin: '10px auto', // Center the button
+                    }}
+                  >
+                    Read More
+                  </button>
                 </div>
               </div>
             ))}
@@ -44,12 +61,7 @@ const Team = () => {
         </div>
       </section>
     </>
-  )
-}
+  );
+};
 
-export default Team
-
-
-
-
-
+export default Team;

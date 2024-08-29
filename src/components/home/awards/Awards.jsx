@@ -8,16 +8,29 @@ const Awards = () => {
     <>
       <section className='awards padding'>
         <div className='container'>
-          <Heading title='Over 1,24,000+ Happy User Bieng With Us Still They Love Our Services' subtitle='Our Awards' />
+        <Heading 
+            title={
+              <span style={{ color: '#000', fontSize: '35px',fontWeight: 'bold' }}>
+                Brighter future when <br /> 
+                strategically more prepared
+              </span>
+            }
+            subtitle={
+              <span style={{ color: '#483ad3', fontSize: '19px', fontWeight: '600' }}>
+                How we work
+              </span>
+            }
+          />
 
           <div className='content grid4 mtop'>
             {awards.map((val, index) => (
               <div className='box' key={index}>
                 <div className='icon'>
-                  <span>{val.icon}</span>
+                <img src={val.icon} alt={`Icon ${val.num}`} />
+
                 </div>
-                <h1>{val.num}</h1>
-                <p>{val.name}</p>
+                <h1 style={{ color: '#483ad3'}}>{val.num}</h1>
+                <p style={{ color: '#000', fontSize: '18px',fontWeight: 'bold' }}>{val.name}</p>
               </div>
             ))}
           </div>

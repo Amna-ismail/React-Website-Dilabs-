@@ -8,12 +8,23 @@ const Featured = () => {
     <>
       <section className='featured background'>
         <div className='container'>
-          <Heading title='Featured Property Types' subtitle='Find All Type of Property.' />
+          <Heading 
+            title={
+              <span style={{ color: '#000', fontWeight: 'bold' }}>
+                Turn Information <br /> 
+                Into Actionable Insights
+              </span>
+            }
+            subtitle={
+              <span style={{ color: '#483ad3', fontSize: '18px', fontWeight: '600' }}>
+                Service were offering.
+              </span>
+            }
+          />
           <FeaturedCard />
         </div>
       </section>
     </>
   )
 }
-
 export default Featured
